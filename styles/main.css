@@ -1,0 +1,57 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+    background-image: url('~@/assets/background.png');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+.active-link {
+    color: #FFB800;
+    /* Change the color to highlight the active link */
+    position: relative;
+    /* Set position to relative for absolute positioning of ::before */
+}
+
+.active-link::before {
+    content: '';
+    /* Create an empty content for the pseudo-element */
+    position: absolute;
+    /* Position the pseudo-element absolutely */
+    top: 50%;
+    /* Move it to the vertical center of the link */
+    left: -120px;
+    /* Adjust the left position to place it beside the text */
+    width: 100px;
+    /* Set the width of the line */
+    height: 10px;
+    /* Set the height of the line */
+    background-color: #FFB800;
+    /* Color of the line */
+    transform: translateY(-50%);
+    /* Adjust for centering the line */
+    content: '';
+    display: block;
+}
+
+ul li:not(.active-link) a:hover span {
+    opacity: 0.8;
+    /* Set the desired hover opacity for non-active links */
+}
+
+.grayscale {
+    filter: grayscale(100%);
+}
